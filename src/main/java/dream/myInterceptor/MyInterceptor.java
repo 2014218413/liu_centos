@@ -13,11 +13,12 @@ import javax.servlet.http.HttpSession;
 public class MyInterceptor implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler, HttpSession httpSession) throws Exception {
         String username = (String) httpSession.getAttribute("username");
-        if (username==null || username=="") {
-            return false;
-        }
-        else {
-            return true;
-        }
+//        if (username==null || username=="") {
+//            return false;
+//        }
+//        else {
+//            return true;
+//        }
+        return true;
     }
 }

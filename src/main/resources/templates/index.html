@@ -1,180 +1,221 @@
 <!DOCTYPE html>
-<html lang="en">
-<head><meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="shortcut icon" href="/favicon.ico">
-    <link rel="bookmark" href="/favicon.ico" type="image/x-icon">
-    <title>知不道叫什么，艹</title>
-    <link rel="stylesheet" href="css/style.css">
-</head><body><div class="wrap css3" id="wrap">
-    <div class="wrapper">
-        <div class="header">
-            <div class="head clearfix">
-                <div class="logo_box">
-                    <h1 class="hidden">AMD9</h1>
-                    <a href="javascript:;" class="logo_link"><img src="img/logo.png" alt="xxx"></a>
+<html lang="zh-Hans-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width" />
+    <title>开拓者</title>
+	<meta name="keywords" content="个人博客，个人网站，个人博客模板，好看的个人博客">
+	<meta name="description" content="个人博客搭建，个人博客免费建站，个人博客网站html源码，个人博客网站制作模板，源码下载，织梦，前端，java，PHP模板源码分享">
+    <link href="layui/css/layui.css" rel="stylesheet" type="text/css">
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="css/index_style.css" rel="stylesheet" type="text/css">
+    <link href="css/animate.min.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div id="menu" class="hover_animation menu_open" data-mark="false">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div id="navgation" class="navgation navgation_close">
+        <ul class="point">
+            <li><a href="#">首页</a></li>
+            <li><a href="/article.html">博客</a></li>
+            <li><a href="/message.html">留言</a></li>
+        </ul>
+        <div class="logo"><a>Mr.liu</a></div>
+    </div>
+    <div class="section" id="section1">
+        <div class="fp-tablecell">
+            <div class="page1">
+                <div class="nav wow zoomIn" data-wow-duration="2s">
+                    <h1>开-拓-者</h1>
+                    <p>只要朝着一个方向努力，一切都会变得得心应手</p>
+                    <a class="layui-btn layui-btn-normal" style="margin-top: 20px" href="article.html">Login</a>
                 </div>
-                <div class="nav_box" id="nav_box">
-                    <ul>
-                        <li>
-                            <a href="javascript:;" target="_blank" clickid="guanwang_navigation_homepage">主页</a>
-                        </li><li>
-                        <a href="javascript:;" target="_blank" clickid="guanwang_navigation_productcenter">企业文化</a>
-                    </li><li>
-                        <a href="javascript:;" target="_blank" clickid="guanwang_navigation_customer">企业架构</a>
-                    </li><li>
-                        <a href="javascript:;" target="_blank" clickid="guanwang_navigation_yangtai">联系客服</a>
-                    </li></ul><span class="ic_line"></span></div>
+                <a class="next wow fadeInUp" data-wow-duration="2s" id="next"></a>
             </div>
-        </div>
-        <div class="page_wp" id="page_wp">
-            <div class="page page_1"><span class="page_bg scale_box"></span>
-                <div class="img_box"><img src="" alt=""></div>
-                <div class="txt_box scale_box">
-                    <h2>新一代AMD将呈现更多精彩</h2>
-                    <p class="txt_brief">从现在开始，你就会感觉到它与以往是如此不同。全新的界面体验，高速的引擎支持，丰富的内容推荐，这一切，都让你的生活更加精彩。</p></div>
-            </div>
-            <div class="page page_2 show"><span class="page_bg scale_box"></span>
-                <div class="img_box"><img src="" alt=""></div>
-                <div class="txt_box scale_box">
-                    <h2>高速引擎可以带你穿越时空</h2>
-                    <p class="txt_brief">我们对速度的渴望从未停止，一起来体验速度超频的感觉。它的技术服务会更加稳定，占用更少的资源提供更高的速度支持，这一切只源于我们对技术的无尽追求。</p></div>
-            </div>
-            <div class="page page_3"><span class="page_bg scale_box"></span>
-                <div class="img_box"><img src="" alt=""></div>
-                <div class="txt_box scale_box">
-                    <h2>与你一起发现更多精彩资源</h2>
-                    <p class="txt_brief">它以生动的方式呈现更多内容，让你在体验极速的同时，拥有更多选择。热门游戏，热辣直播，高清美图，我们准备好了一切，就等你来探索</p></div>
-            </div>
-            <div class="page page_4"><span class="page_bg scale_box"></span>
-                <div class="img_box"><img src="" alt=""></div>
-                <div class="light_wp scale_box"><span class="light_box"><i class="light_1"></i> <i class="light_2"></i> <i class="light_3"></i> <i class="light_4"></i> <i class="light_5"></i></span></div><span class="meteor_box scale_box"></span>
-                <div class="txt_box scale_box">
-                    <h2>还有另一个自己在这里等你</h2>
-                    <p class="txt_brief">当你使用AMD的同时，也许另一个人也和你一样，在下载、在观看同样的东西。这些只是开始，新一代AMD使用越久，越能发现它的创新和诚心。</p></div>
-            </div>
-        </div>
-        <div class="star_wp scale_box" id="star_wp"><span class="star_bg"></span> <span class="star_box"></span></div><canvas id="canvas" width="1536" height="330"></canvas>
-        <div class="btns_wp scale_box">
-            <a class="btn_download JS-btn-download" href="lo">进入</a>
-        </div>
-        <div class="btn_control" id="btn_control">
-            <a href="javascript:;" class=""></a>
-            <a href="javascript:;" class="cur"></a>
-            <a href="javascript:;" class=""></a>
-            <a href="javascript:;" class=""></a>
-        </div>
-        <div class="footer">
-            <div class="foot">
-                <p>© XXXX-2016 XXXX 版权所有</p></div>
         </div>
     </div>
-</div>
-<script src="./js/vendors.js"></script>
-<script src="./js/index.js"></script>
-<!--[if IE 6]>
-<script type="text/javascript" src="http://static.webgame.kanimg.com/com/DD_PNG_min.js"></script>
-<script type="text/javascript">
-    var links=document.getElementsByTagName("a");
-    for(var i=0,l=links.length;i<l;i++){
-        links[i].setAttribute("hideFocus",true);
-    }
-</script>
-<![endif]--></body><style id="stylish-1" class="stylish" type="text/css">.cont-mod{
-    width:960px;
-    height: 600px;
-    background-image: url(https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1456963135,604049051&fm=26&gp=0.jpg);
-    background-repeat:no-repeat;
-    background-size:100% auto;
-}
-.engine-key{
-    background-color:black;
-    color:green;
-    /*     font-family:"Times New Roman"; */
-    font-size:100px;
-    font-weight:600;
-    font-style:italic;
-}
-/* .engine-key-wrapper{
-background-color:red;
-    border:5px solid red;
-    border-radius:50px 25px;
-} */
-
-/* .engine-action {
-background-color:red;
-    border:5px solid red;
-    border-radius:50px 25px;
-} */
-.search-engine .engine-action .engine-hot i{
-    display:none
-}
-.ver-wide{
-    background-color:black
-}
-.header{
-    background-color:black
-}
-/* .btn-weather-pop{
-display:none
-} */
-
-.footer{
-    display:none
-}
-.engine-logos{
-    display:none
-}
-.btn-engine-bg{
-    display:none
-}
-.engine-hot{
-    display:none
-}
-.logo-firefox{
-    display:none
-}
-.site-mod {
-    display:none
-}
-.bd-ghhw-container {
-    display:none
-}
-.side-mod {
-    display:none
-}
-.news-mod {
-    display:none
-}
-.column-mod {
-    display:none
-}
-.site-info {
-    display:none
-}
-.fright {
-    display:none
-}
-.engine-key-wrapper .engine-hot .engine-hot-num{
-    display:none
-}
-.pmt-mod {
-    display:none
-}
-.theme-side-bar-main {
-    display:none
-}
-.mrec {
-    display:none
-}
-
-.main-column{
-    display:none
-}
-.engine-action{
-    display:none
-}
-.moz-dropdown{
-    display:none
-}</style>
+    <div class="section" id="section2">
+        <div class="fp-tablecell">
+            <div class="page2">
+                <div class="warp-box">
+                    <div class="new-article">
+                        <div class="inner wow fadeInDown" data-wow-delay=".2s">
+                            <h1>经营板块</h1>
+                            <p>
+                                只要朝着一个方向努力
+                                <br>一切都会变得得心应手
+                            </p>
+                        </div>
+                    </div>
+                    <div class="layui-row">
+                        <div class="layui-col-xs12 layui-col-sm4 layui-col-md4  wow fadeInUp" style="padding: 0 10px">
+                            <div class="single-news">
+                                <div class="news-head">
+                                    <img src="image/java.jpg">
+                                    <a href="#" class="link"><i class="fa fa-link"></i></a>
+                                </div>
+                                <div class="news-content">
+                                    <h4>
+                                        <a href="#">
+                                            Java专栏
+                                        </a>
+                                    </h4>
+                                    <div class="date">
+                                        2020年6月16日
+                                    </div>
+                                    <p>
+                                       本专栏主要分享Java的各种常见问题，包括java学习路线，java基础，框架，微服务，项目，面试题，希望通过这些知识的分享能够提升自己的java水平
+                                    </p>
+                                    <a href="#" class="btn">
+                                        阅读更多 
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-col-xs12 layui-col-sm4 layui-col-md4  wow fadeInUp" data-wow-delay=".2s" style="padding: 0 10px">
+                            <div class="single-news">
+                                <div class="news-head">
+                                    <img src="image/web.jpg">
+                                    <a href="#" class="link"><i class="fa fa-link"></i></a>
+                                </div>
+                                <div class="news-content">
+                                    <h4>
+                                        <a href="#">
+                                           web前端专栏
+                                        </a>
+                                    </h4>
+                                    <div class="date">
+                                         2020年6月16日
+                                    </div>
+                                    <p>
+                                        本栏目主要分享关于web前端的学习路线，基础知识，常用框架，面试题，项目等等
+                                    </p>
+                                    <a href="#" class="btn">
+                                        阅读更多 
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-col-xs12 layui-col-sm4 layui-col-md4  wow fadeInUp" data-wow-delay=".4s" style="padding: 0 10px">
+                            <div class="single-news">
+                                <div class="news-head">
+                                    <img src="image/dedecms.jpg">
+                                    <a href="#" class="link"><i class="fa fa-link"></i></a>
+                                </div>
+                                <div class="news-content">
+                                    <h4>
+                                        <a href="#">
+                                            DeDeCMS专栏
+                                        </a>
+                                    </h4>
+                                    <div class="date">
+                                        2020年6月16日
+                                    </div>
+                                    <p>
+                                       本栏目主要介绍DeDeCMS网站内容管理系统，使用dede常见的问题，常用标签，插件，提供建站帮助
+                                    </p>
+                                    <a href="#" class="btn">
+                                        阅读更多 
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section" id="section3">
+        <div class="fp-tablecell">
+            <div class="page3">
+                <div class="warp-box">
+                    <div class="warp">
+                        <div class="inner">
+                            <div class="links">
+                                <ul>
+                                    <li class="wow fadeInLeft"><a href="#">关于</a></li>
+                                    <li class="wow fadeInRight"><a href="#">+友情链接</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section" id="section4">
+        <div class="fp-tablecell">
+            <div class="page4">
+                <div class="warp-box">
+                    <div class="about">
+                        <div class="inner">
+                            <h1 class="wow fadeInLeft">自信，乐观，开朗，自律，坚持，好学</h1>
+                            <p class="wow fadeInRight">                         
+                                   一天很短，开心了就笑，不开心了就过会儿再笑。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--    <footer class="footer wow fadeInUp" id="contact">-->
+<!--        <div class="footer-top">-->
+<!--            <div class="container">-->
+<!--                <div class="layui-row">-->
+<!--                    <div class="layui-col-xs12 layui-col-sm6 layui-col-md4">-->
+<!--                        <div class="single-widget about">-->
+<!--                            <div class="footer-logo">-->
+<!--                                <h2>ZQ个人博客</h2>-->
+<!--                            </div>-->
+<!--                            <p>世界那么大，我想去看看</p>-->
+<!--                            <div class="button">-->
+<!--                                <a href="#" class="btn layui-btn layui-btn-normal">About Me</a>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="layui-col-xs12 layui-col-sm6 layui-col-md4">-->
+<!--                        <div class="single-widget">-->
+<!--                            <h2>相关链接</h2>-->
+<!--                            <ul class="social-icon">-->
+<!--                                <li class="active"><a href="#"><i class="fa fa-book"></i>博文</a></li>-->
+<!--                                <li class="active"><a href="#"><i class="fa fa-comments"></i>留言</a></li>-->
+<!--                                <li class="active"><a href="#"><i class="fa fa-share"></i>资源</a></li>-->
+<!--                                <li class="active"><a href="#"><i class="fa fa-snowflake-o"></i>日记</a></li>-->
+<!--                                <li class="active"><a href="#"><i class="fa fa-files-o"></i>归档</a></li>-->
+<!--                            </ul>                   -->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="layui-col-xs12 layui-col-sm12 layui-col-md4">-->
+<!--                        <div class="single-widget contact">-->
+<!--                            <h2>联系我</h2>-->
+<!--                            <ul class="list">-->
+<!--                                <li><i class="fa fa-map"></i>地址:深圳市南山区</li>-->
+<!--                                <li><i class="fa fa-qq"></i>QQ: 1435469178 </li>-->
+<!--                                <li><i class="fa fa-envelope"></i>邮箱: 1435469178@qq.com</li>-->
+<!--                            </ul>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="copyright">-->
+<!--            <div class="container">-->
+<!--                <div class="layui-row">-->
+<!--                    <div class="layui-col-xs12 layui-col-sm12 layui-col-md12 text-center">-->
+<!--                        <p>Copyright &copy; 2019-2020 ZQ个人博客 All Rights Reserved V.5.1.3 粤ICP备1231100号</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>  -->
+<!--    </footer>-->
+    <script src="layui/layui.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
 </html>
