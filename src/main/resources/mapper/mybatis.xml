@@ -4,6 +4,6 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="dream.myDao.dao.UserDao">
     <insert id="addUser">
-        insert into user values (#{username},#{password},#{email},#{state},sysdate());
+        insert into user values (#{username},#{password},#{state},sysdate());
     </insert>
 </mapper>

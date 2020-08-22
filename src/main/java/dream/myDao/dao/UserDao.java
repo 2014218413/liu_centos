@@ -14,5 +14,5 @@ public interface UserDao {
     * 这里涉及到一个问题，就是service层调用这里的dao层 企图将数据传入进来
     * 但是这里 参数是不能进行自动进行匹配的 所以要@Param进行指定
     * */
-    public void addUser(@Param("username") String username, @Param("password") String password, @Param("email") String email, @Param("state") String state);
+    public void addUser(@Param("username") String username, @Param("password") String password, @Param("state") String state);
 }
