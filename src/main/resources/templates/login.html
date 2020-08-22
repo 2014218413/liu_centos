@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>开拓者-登录页</title>
+    <script src="js/vue.min.js"></script>
+    <script src="js/element.js"></script>
+    <link rel="stylesheet" href="css/element.css">
+    <script src="js/jquery-3.4.1.js"></script>
+</head>
+<body>
+<div id="content">
+    <div>
+        <p class="p001">你所懦弱的那些逃避-</p>
+        <p class="p002">多年后会成为你救赎不了的过往-</p>
+    </div>
+
+    <div class="divForm">
+        <el-form :model="dynamicValidateForm" ref="dynamicValidateForm" label-width="100px" class="demo-dynamic">
+            <el-form-item
+                    prop="email"
+                    label="邮箱"
+                    :rules="[
+      { required: true, message: '请输入邮箱地址', trigger: 'blur' },
+      { type: 'email', message: '请输入正确的邮箱地址', trigger: ['blur', 'change'] }
+    ]"
+            >
+                <el-input v-model="dynamicValidateForm.email"></el-input>
+            </el-form-item>
+            <el-form-item
+                    prop="code"
+                    label="验证码"
+                    :rules="{
+      required: true, message: '验证码', trigger: 'blur'
+    }"
+            >
+                <el-input v-model="dynamicValidateForm.code"></el-input><el-button @click.prevent="removeDomain(dynamicValidateForm.email)" class="getCode">获取验证码</el-button>
+            </el-form-item>
+            <el-form-item>
+                <el-button type="primary" @click="submitForm(dynamicValidateForm.email,dynamicValidateForm.code)">提交</el-button>
+                <el-button @click="resetForm('dynamicValidateForm')">重置</el-button>
+            </el-form-item>
+        </el-form>
+    </div>
+
+</div>
+</body>
+<script>
+
+    var Main = {
+        data() {
+            return {
+                dynamicValidateForm: {
+                    email: '仅支持 QQ 邮箱',
+                    code: ''
+                }
+            };
+        },
+        methods: {
+            // 提交 （提交前会有校验，看邮箱，验证码是否都正确填写了）
+            submitForm(email,code) {
+                this.$refs['dynamicValidateForm'].validate((flag)=>{
+                    if (flag) {
+                        $.ajax({
+                            url:"/check",
+                            dataType:"json",
+                            async:true,
+                            data:{"value":email},
+                            success:function (data) {
+                                alert(data)
+                            },
+                            error:function () {
+                                alert('网络超时，请稍后重试----')
+                            }
+                        })
+                    }
+                    else {
+                        return false;
+                    }
+                })
+
+            },
+            resetForm(formName) {
+                this.$refs[formName].resetFields();
+            },
+            // 获取验证码（前提是通过了验证）
+            removeDomain(email) {
+                var filter = /[1-9][0-9]{4,}@qq.com/;
+                if (filter.test(email)) {
+                    $.ajax({
+                        url:"/sendMail",
+                        data:{email:email},
+                        async: true,
+                        beforeSend:function () {
+                            document.getElementsByClassName("getCode").item(0).setAttribute('disabled',true);
+                        },
+                        success: function (data) {
+                            if (data=="yes") {
+                                alert('近期接到过验证码，请使用其进行登录')
+                            }
+                            else {
+                                if (data=="error") {
+                                    alert('发送验证码失败----')
+                                }
+                                else {
+                                    alert('请查收')
+                                }
+                            }
+                        }
+                    })
+                }
+                else {
+                    return false;
+                }
+            }
+        }
+    }
+    var Ctor = Vue.extend(Main);
+    new Ctor().$mount('.divForm');
+
+</script>
+<style type="text/css">
+
+    .p001 {
+        font-size: 27px;
+        font-weight: bold;
+        letter-spacing: 5px;
+        color: black;
+    }
+    .p002{
+        font-size: 30px;
+        font-weight: bold;
+        letter-spacing: 8px;
+        color: black;
+    }
+    body {
+        background-image: url("image/index_bg.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    #content{
+        margin-top: 8%;
+        margin-left: 26%;
+    }
+    .el-form-item__label{
+        color: pink;
+        font-weight: bold;
+    }
+    .divForm input{
+        opacity: 60%;
+        color: green;
+        font-weight: bold;
+    }
+</style>
+</html>

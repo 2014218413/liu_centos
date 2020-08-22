@@ -8,6 +8,12 @@ spring:
     username: root
     password: liushengen666.
     driver-class-name: com.mysql.cj.jdbc.Driver
+  redis:
+    database: 0
+    port: 6379
+    host: 101.200.137.2
+    password: liushengen666.
+    timeout: 5000
 mybatis:
   type-aliases-package: centos.dream.myDao.enyity
   mapper-locations: classpath:mapper/*.xml

@@ -146,3 +146,28 @@ a,img{text-decoration:none;border:none;}
 }
 @keyframes object_three {75% {transform:scale(0);-webkit-transform:scale(0);}
 }
+.page1 p {
+	font-size: 25px;
+	font-weight: bold;
+}
+.page1 h1 {
+	font-size: 35px;
+	font-weight: bold;
+}
+.page2 .new-article p {
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.page2 .new-article h1 {
+	font-weight: bold;
+}
+.page4 .about h1 {
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.page4 .about p {
+	font-size:18px;
+	font-weight: bold;
+}
