@@ -1,0 +1,18 @@
+
+.p001 {
+    font-size: 27px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    color: black;
+}
+.p002{
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 8px;
+    color: black;
+}
+body {
+    background-image: url("../image/index_bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
