@@ -14,7 +14,11 @@ import javax.annotation.Resource;
 public class UserServiceImpl implements UserService {
     @Resource
     UserDao userDao;
-    public void addUser(String username,String password,String email,String state) {
-        userDao.addUser(username,password,email,state);
+    public void addUser(String username,String password,String state) {
+        userDao.addUser(username,password,state);
+    }
+
+    public int loginUser(String username, String password) {
+        return userDao.loginUser(username,password);
     }
 }

@@ -22,11 +22,8 @@ public class MvcConfig implements WebMvcConfigurer {
             public void addViewControllers(ViewControllerRegistry registry) {
                 registry.addViewController("/").setViewName("index.html");
                 registry.addViewController("/login.html").setViewName("login.html");
-                registry.addViewController("/article.html").setViewName("article.html");
-                registry.addViewController("/diary.html").setViewName("diary.html");
-                registry.addViewController("/link.html").setViewName("link.html");
-                registry.addViewController("/message.html").setViewName("message.html");
-                registry.addViewController("/read.html").setViewName("read.html");
+                registry.addViewController("/success.html").setViewName("success.html");
+
             }
 
             public void addInterceptors(InterceptorRegistry registry) {

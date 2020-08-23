@@ -15,7 +15,7 @@ import java.util.Properties;
  **/
 @Service
 public class Q_mail {
-    public static String q_mailSend (String code) throws GeneralSecurityException, MessagingException {
+    public static String q_mailSend (String code,String email) throws GeneralSecurityException, MessagingException {
 
         // qq存在一个特性，设置ssl加密
         MailSSLSocketFactory mailSSLSocketFactory = new MailSSLSocketFactory();
@@ -51,7 +51,7 @@ public class Q_mail {
         mimeMessage.setFrom(new InternetAddress("2014218413@qq.com"));
 
         //接收人
-        mimeMessage.setRecipient(Message.RecipientType.TO,new InternetAddress("2014218413@qq.com"));
+        mimeMessage.setRecipient(Message.RecipientType.TO,new InternetAddress(email));
 
         //邮件主题
         mimeMessage.setSubject("开拓者联盟");

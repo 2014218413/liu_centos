@@ -58,16 +58,15 @@
         },
         methods: {
             // 提交 （提交前会有校验，看邮箱，验证码是否都正确填写了）
-            submitForm(email,code) {
+            submitForm(username,password) {
                 this.$refs['dynamicValidateForm'].validate((flag)=>{
                     if (flag) {
                         $.ajax({
-                            url:"/check",
-                            dataType:"json",
+                            url:"/login",
                             async:true,
-                            data:{"value":email},
+                            data:{"username":username,"password":password},
                             success:function (data) {
-                                alert(data)
+                                window.location.href=""+data+"";
                             },
                             error:function () {
                                 alert('网络超时，请稍后重试----')
@@ -85,14 +84,17 @@
             },
             // 获取验证码（前提是通过了验证）
             removeDomain(email) {
+
                 var filter = /[1-9][0-9]{4,}@qq.com/;
                 if (filter.test(email)) {
+                    let a = 0;
                     $.ajax({
                         url:"/sendMail",
                         data:{email:email},
                         async: true,
                         beforeSend:function () {
                             document.getElementsByClassName("getCode").item(0).setAttribute('disabled',true);
+
                         },
                         success: function (data) {
                             if (data=="yes") {
@@ -100,12 +102,15 @@
                             }
                             else {
                                 if (data=="error") {
-                                    alert('发送验证码失败----')
+                                    alert('发送失败，请使用正确邮箱进行操作--')
                                 }
                                 else {
-                                    alert('请查收')
+                                    alert('发送成功，请查收--')
                                 }
                             }
+                        },
+                        complete:function () {
+                            location.reload();
                         }
                     })
                 }

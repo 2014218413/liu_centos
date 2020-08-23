@@ -1,7 +1,9 @@
 package dream.myController;
 
+import dream.myService.serviceImpl.UserServiceImpl;
 import dream.redis.redisServicesImpl.RedisServicesImpl;
 import dream.sendMail.Q_mail;
+import dream.sendMail.mailCodeProvider.MailCodeProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,8 +18,16 @@ import java.security.GeneralSecurityException;
  **/
 @Controller
 public class MailController {
+
+    // 记录到redis
     @Autowired
     RedisServicesImpl redisServices;
+    // 插入到mysql数据库
+    @Autowired
+    UserServiceImpl userService;
+    // 验证码生产者
+    @Autowired
+    MailCodeProvider mailCodeProvider;
 
     /*
     * 对传入的 email 进行判断，如果redis 中有它的记录说明它近期接过验证码
@@ -34,9 +44,12 @@ public class MailController {
             return "yes";
         }
         else {
-            String message =  Q_mail.q_mailSend("9527");
+            String code = mailCodeProvider.codeProvide().toString();
+            String message = Q_mail.q_mailSend(code,email);
             if (message=="success") {
-                redisServices.addRedis(email,"9527");
+                redisServices.addRedis(email,code);
+                userService.addUser(email,code,"1");
+
             }
             return message;
         }

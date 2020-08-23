@@ -15,4 +15,7 @@ public interface UserDao {
     * 但是这里 参数是不能进行自动进行匹配的 所以要@Param进行指定
     * */
     public void addUser(@Param("username") String username, @Param("password") String password, @Param("state") String state);
+
+    //登录验证
+    public int loginUser (@Param("username") String username,@Param("password") String password);
 }

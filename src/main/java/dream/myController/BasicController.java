@@ -20,5 +20,18 @@ public class BasicController {
     @Autowired
     UserServiceImpl userService;
 
+    //登录验证
+    @RequestMapping("/login")
+    @ResponseBody
+    public String login (String username,String password,HttpSession httpSession,HttpServletResponse httpServletResponse) throws IOException {
+        if (userService.loginUser(username,password) > 0) {
+            httpSession.setAttribute("username",username);
+            httpSession.setAttribute("password",password);
+            return "/success.html";
+        }
+        else {
+            return "/";
+        }
+    }
 
 }

@@ -7,5 +7,8 @@ package dream.myService.service;
 public interface UserService {
 
     //用户注册成功，加入到数据库
-    public void addUser(String username,String password,String email,String state);
+    public void addUser(String username,String password,String state);
+
+    // 登录验证
+    public int loginUser (String username,String password);
 }
